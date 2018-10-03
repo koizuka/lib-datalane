@@ -35,7 +35,7 @@ void os::windows::async_request::set_valid(bool valid) {
 	this->callback_called = false;
 }
 
-void os::windows::async_request::completion_routine(DWORD dwErrorCode, DWORD dwBytesTransmitted, OVERLAPPED *ov) {
+void WINAPI os::windows::async_request::completion_routine(DWORD dwErrorCode, DWORD dwBytesTransmitted, OVERLAPPED *ov) {
 	os::windows::overlapped *ovp = os::windows::overlapped::get_pointer_from_overlapped(ov);
 	if (!ovp) {
 		return;

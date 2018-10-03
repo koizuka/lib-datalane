@@ -37,7 +37,7 @@ namespace os {
 
 			void set_valid(bool valid);
 
-			static void completion_routine(DWORD dwErrorCode, DWORD dwBytesTransmitted, OVERLAPPED *ov);
+			static void WINAPI completion_routine(DWORD dwErrorCode, DWORD dwBytesTransmitted, OVERLAPPED *ov);
 
 			public:
 			~async_request();
